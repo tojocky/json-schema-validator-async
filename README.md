@@ -1,7 +1,8 @@
 # json-schema-validator-async
 An async JSON schema validator compatible with $ref file dependencies and angular 2+ karma
 
-# How to integrate with angular 2+ and karma
+## How to integrate with angular 2+ and karma
+
 * expose json folder by updating the file `karma.conf.js`
 
 ```javascript
@@ -18,11 +19,11 @@ files: [
 
 ```typescript
 import { JsonSchemaValidator } from 'json-schema-validator-async';
-resourseValidator = new JsonSchemaValidator({path: 'base/schemas/*.json', mainSchemaFile: 'resourceSchema.json'});
+schema1Validator = new JsonSchemaValidator({path: 'base/schemas/*.json', mainSchemaFile: 'resourceSchema.json'});
 ...
 it('shoud have the valid schema' (done) => {
   jsonData = {...};
-  resourseValidator.validate(jsonData, expect).then(done);
+  schema1Validator.validate(jsonData, expect).then(done, done);
 });
 ```
 
