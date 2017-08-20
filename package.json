@@ -1,0 +1,40 @@
+{
+    "name": "json-schema-validator-async",
+    "version": "1.0.0",
+    "description": "An async JSON schema validator compatible with $ref file dependencies and angular 2+ karma",
+    "main": "lib/index",
+    "types": "lib/index",
+    "scripts": {
+        "prepublishOnly": "npm run build",
+        "test": "./node_modules/.bin/ts-node ./test/index.ts",
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tojocky/json-schema-validator-async.git"
+    },
+    "keywords": [
+        "json",
+        "schema",
+        "ref",
+        "web",
+        "node",
+        "karma",
+        "angular"
+    ],
+    "author": "ionlupascu@gmail.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tojocky/json-schema-validator-async/issues"
+    },
+    "homepage": "https://github.com/tojocky/json-schema-validator-async#readme",
+    "dependencies": {
+        "ajv": "^5.2.2"
+    },
+    "devDependencies": {
+        "@types/node": "^8.0.24",
+        "nodemon": "^1.11.0",
+        "ts-node": "^3.3.0",
+        "typescript": "^2.4.2"
+    }
+}
