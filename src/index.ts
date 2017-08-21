@@ -24,7 +24,7 @@ export class JsonSchemaValidator {
       if (!opt.connectionType || opt.connectionType === 'web') {
         this.loadSchema = this.loadSchemaWeb;
       } else if (opt.connectionType === 'node') {
-        this.loadSchema = this.loadSchemaWeb;
+        this.loadSchema = this.loadSchemaNode;
       } else {
         throw new Error(`invalid connectionType ${opt.connectionType}`);
       }
