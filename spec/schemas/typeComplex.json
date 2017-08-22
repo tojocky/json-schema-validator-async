@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "subtypeComplex": {
+            "type": "array",
+            "items": {
+                "$ref": "typeSimpleOrComplex.json"
+            }
+        },
+        "field4": {
+            "type": "string"
+        }
+    },
+    "required": ["field4"]
+}

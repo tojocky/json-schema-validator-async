@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "properties": {
+        "field1": {
+            "type": "string"
+        },
+        "field2": {
+            "type": "number"
+        }
+    },
+    "required": ["field1"]
+}

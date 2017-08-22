@@ -20,7 +20,7 @@ export class JsonSchemaValidator {
 
   constructor(opt: {path: string, mainSchemaFile: string, loadSchema?: (uri: string) => Promise<Object>, connectionType?: string, metaSchema?: Object, ajvOptions?: Object}) {
     this.loadSchema = opt.loadSchema || this.loadSchemaWeb;
-    if (!this.loadSchema) {
+    if (!opt.loadSchema) {
       if (!opt.connectionType || opt.connectionType === 'web') {
         this.loadSchema = this.loadSchemaWeb;
       } else if (opt.connectionType === 'node') {
@@ -67,7 +67,7 @@ export class JsonSchemaValidator {
   }
 
   loadSchemaWeb(uri: String): Promise<Object> {
-    console.log(`loadSchema ${uri}`);
+    console.log(`loadSchemaWeb ${uri} from ${this.loadSchemaPath}`);
 
     return new Promise<Object>((resolve, reject) => {
       const url = `${this.loadSchemaPath}/${uri}`;
@@ -96,7 +96,7 @@ export class JsonSchemaValidator {
   }
 
   loadSchemaNode(uri: String): Promise<Object> {
-    console.log(`loadSchema ${uri}`);
+    console.log(`loadSchemaNode ${uri}`);
     return Promise.resolve(require(path.join(this.loadSchemaPath, uri)));
   }
 }

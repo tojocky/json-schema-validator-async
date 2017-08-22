@@ -1,5 +1,6 @@
 node_modules/
 src/
-test/
+spec/
 .gitignore
 *-lock.json
+karma.conf.js
