@@ -1,9 +1,12 @@
 import { JsonSchemaValidator } from '../src/index';
-const path = require('path');
+import { jsonEnv } from './env';
+
+
 
 describe('typeSimple', () => {
-    const jsonValidator = new JsonSchemaValidator({connectionType: 'node', path: path.join( __dirname, './schemas'), mainSchemaFile: 'typeComplex.json'});
-    let mediator: any = 1;
+    jsonEnv.mainSchemaFile = 'typeComplex.json';
+    const jsonValidator = new JsonSchemaValidator(jsonEnv);
+
     it('invalidate empty object', (done) => {
         const emptyjson = {};
         jsonValidator.validate(emptyjson).then((result: any) => {

@@ -6,7 +6,11 @@
     "types": "lib/index",
     "scripts": {
         "prepublishOnly": "npm run build",
-        "test": "jasmine-ts \"spec/**/*.spec.ts\"",
+        "test": "karma start karma.conf.js --single-run && npm run test:node",
+        "test:node": "jasmine-ts \"spec/**/*.spec.ts\"",
+        "test:karma": "karma start karma.conf.js",
+        "ci:karma": "karma start karma.conf.js --browsers PhantomJS --single-run",
+        "ci:test": "npm run ci:karma && npm run test:node",
         "build": "tsc"
     },
     "repository": {
@@ -34,11 +38,19 @@
     "devDependencies": {
         "@types/jasmine": "^2.5.54",
         "@types/node": "^8.0.24",
+        "es6-promise": "^4.1.1",
         "jasmine-ts": "^0.2.1",
         "karma": "^1.7.0",
+        "karma-chrome-launcher": "^2.2.0",
         "karma-coverage": "^1.1.1",
+        "karma-jasmine": "^1.1.0",
+        "karma-junit-reporter": "^1.2.0",
+        "karma-phantomjs-launcher": "^1.0.4",
         "karma-typescript": "^3.0.5",
+        "karma-typescript-es6-transform": "^1.0.2",
         "nodemon": "^1.11.0",
+        "phantomjs": "^2.1.7",
+        "promise-polyfill": "^6.0.2",
         "ts-node": "^3.3.0",
         "typescript": "^2.4.2"
     }
