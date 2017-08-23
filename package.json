@@ -1,11 +1,11 @@
 {
     "name": "json-schema-validator-async",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "An async JSON schema validator compatible with $ref file dependencies and angular 2+ karma",
     "main": "lib/index",
     "types": "lib/index",
     "scripts": {
-        "prepublishOnly": "npm run build",
+        "prepublishOnly": "npm run ci:test && npm run build",
         "test": "karma start karma.conf.js --single-run && npm run test:node",
         "test:node": "jasmine-ts \"spec/**/*.spec.ts\"",
         "test:karma": "karma start karma.conf.js",
